@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, current_user
 from models.device_model import get_all_devices, add_device, delete_device
 from models.log_model import insert_log
 
@@ -14,7 +14,6 @@ def get_devices():
 @device_routes.route("/devices", methods=["POST"])
 @jwt_required()
 def create_device():
-    current_user = get_jwt_identity()
     if current_user['role'] != 'admin':
         return jsonify({"error": "Admin privileges required"}), 403
 
@@ -28,7 +27,6 @@ def create_device():
 @device_routes.route("/devices/<int:id>", methods=["DELETE"])
 @jwt_required()
 def remove_device(id):
-    current_user = get_jwt_identity()
     if current_user['role'] != 'admin':
         return jsonify({"error": "Admin privileges required"}), 403
 

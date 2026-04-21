@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, current_user
 from models.threshold_model import get_threshold, update_threshold, create_default_threshold
 from models.log_model import insert_log
 
@@ -25,7 +25,6 @@ def fetch_device_thresholds(device_id):
 @threshold_routes.route('/threshold/<int:device_id>', methods=['POST'])
 @jwt_required()
 def modify_device_thresholds(device_id):
-    current_user = get_jwt_identity()
     if current_user['role'] != 'admin':
         return jsonify({"error": "Admin privileges required to alter mechanics"}), 403
         

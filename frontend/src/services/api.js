@@ -13,6 +13,20 @@ api.interceptors.request.use((config) => {
     return config;
 });
 
+// Intercept responses to handle authentication errors (401/403)
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && (error.response.status === 401)) {
+      localStorage.removeItem('npmx_token');
+      localStorage.removeItem('npmx_role');
+      localStorage.removeItem('npmx_user');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
+
 export const loginApi = async (data) => {
     const res = await api.post('/login', data);
     return res.data;

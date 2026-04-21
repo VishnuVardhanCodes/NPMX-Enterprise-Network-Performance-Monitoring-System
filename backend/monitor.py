@@ -3,7 +3,7 @@ import threading
 from ping3 import ping
 import mysql.connector
 from datetime import datetime
-from config import DB_HOST, DB_USER, DB_PASSWORD, DB_NAME
+from config import MYSQL_HOST as DB_HOST, MYSQL_USER as DB_USER, MYSQL_PASSWORD as DB_PASSWORD, MYSQL_DATABASE as DB_NAME
 
 def get_db_connection():
     return mysql.connector.connect(

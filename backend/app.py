@@ -10,6 +10,7 @@ from routes.threshold_routes import threshold_routes
 from routes.auth_routes import auth_routes
 from routes.log_routes import log_routes
 from flask_jwt_extended import JWTManager
+from monitor import start_monitor
 
 app = Flask(__name__)
 # Enhanced CORS to handle preflight and headers correctly
@@ -26,25 +27,30 @@ app.config['JWT_TOKEN_LOCATION'] = ['headers']
 app.config['JWT_HEADER_NAME'] = 'Authorization'
 app.config['JWT_HEADER_TYPE'] = 'Bearer'
 
+import json
+
 jwt = JWTManager(app)
 
-# Use a custom string identity to avoid dictionary serialization issues across different versions
 @jwt.user_identity_loader
 def user_identity_lookup(user_data):
-    # If user_data is already a dict (from login), we might want to just return the id or stringified dict
-    import json
-    return json.dumps(user_data)
+    if isinstance(user_data, (dict, list)):
+        return json.dumps(user_data)
+    return str(user_data)
 
 @jwt.user_lookup_loader
 def user_lookup_callback(_jwt_header, jwt_data):
-    import json
-    identity = json.loads(jwt_data["sub"])
+    identity = jwt_data["sub"]
+    if isinstance(identity, str):
+        try:
+            return json.loads(identity)
+        except:
+            return identity
     return identity
 
 # Diagnostics for JWT errors
 @jwt.invalid_token_loader
 def invalid_token_callback(error):
-    return jsonify({"error": "Invalid token", "message": str(error)}), 422
+    return jsonify({"error": "Invalid token", "message": str(error)}), 401
 
 @jwt.unauthorized_loader
 def missing_token_callback(error):
@@ -72,4 +78,6 @@ def home():
     })
 
 if __name__ == '__main__':
+    # Start background monitoring thread
+    start_monitor()
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -6,12 +6,13 @@ import toast from 'react-hot-toast';
 import CustomDeviceNode from '../components/CustomDeviceNode';
 import { getTopologyNodesApi, getTopologyLinksApi, saveNodePositionApi, getRecentAlertsApi, getDevicesApi } from '../services/api';
 
+const nodeTypes = { customDevice: CustomDeviceNode };
+
 export default function NetworkMap() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [alerts, setAlerts] = useState([]);
   
-  const nodeTypes = useMemo(() => ({ customDevice: CustomDeviceNode }), []);
 
   useEffect(() => {
     const fetchData = async () => {
