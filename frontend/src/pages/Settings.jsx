@@ -31,7 +31,7 @@ export default function Settings() {
 
   useEffect(() => {
     const fetchThresholds = async () => {
-       if(!selectedDevice) return;
+       if(!selectedDevice || selectedDevice === '') return;
        try {
            setIsLoading(true);
            const data = await getThresholdApi(selectedDevice);

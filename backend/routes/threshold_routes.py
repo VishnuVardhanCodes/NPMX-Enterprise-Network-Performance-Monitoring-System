@@ -5,6 +5,11 @@ from models.log_model import insert_log
 
 threshold_routes = Blueprint('threshold_routes', __name__)
 
+@threshold_routes.route('/threshold/', methods=['GET'])
+@jwt_required()
+def threshold_base_error():
+    return jsonify({"error": "No device ID provided"}), 400
+
 @threshold_routes.route('/threshold/<int:device_id>', methods=['GET'])
 @jwt_required()
 def fetch_device_thresholds(device_id):

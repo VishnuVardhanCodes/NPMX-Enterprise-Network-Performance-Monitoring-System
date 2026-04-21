@@ -25,6 +25,7 @@ A complete, self-hosted, offline-capable Network Performance Monitoring (NPM) we
    ```
    cd backend
    pip install -r requirements.txt
+   venv\Scripts\activate
    python app.py
    ```
 
