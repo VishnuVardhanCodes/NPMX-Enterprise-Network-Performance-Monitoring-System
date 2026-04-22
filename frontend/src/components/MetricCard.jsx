@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
-export default function MetricCard({ title, value, icon, color, delay }) {
+export default memo(function MetricCard({ title, value, icon, color, delay }) {
   const gradientMap = {
     primary: 'from-purple-600 to-purple-400',
     blue: 'from-blue-600 to-blue-400',
@@ -55,4 +55,4 @@ export default function MetricCard({ title, value, icon, color, delay }) {
       <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r group-hover:w-full transition-all duration-500 ease-out z-20"></div>
     </motion.div>
   );
-}
+});

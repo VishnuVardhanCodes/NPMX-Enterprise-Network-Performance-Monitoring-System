@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
-export default function ChartCard({ title, children, delay }) {
+export default memo(function ChartCard({ title, children, delay }) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -28,4 +28,4 @@ export default function ChartCard({ title, children, delay }) {
       </div>
     </motion.div>
   );
-}
+});

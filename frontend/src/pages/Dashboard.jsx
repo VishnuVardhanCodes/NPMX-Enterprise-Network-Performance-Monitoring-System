@@ -8,6 +8,9 @@ import AlertPanel from '../components/AlertPanel';
 import { getDashboardStatsApi, getRecentAlertsApi } from '../services/api';
 import toast from 'react-hot-toast';
 
+import SkeletonLoader from '../components/SkeletonLoader';
+import EmptyState from '../components/EmptyState';
+
 export default function Dashboard() {
   const [stats, setStats] = useState({
     total_devices: '0',
@@ -32,7 +35,8 @@ export default function Dashboard() {
     } catch (err) {
       console.error("Dashboard Sync Error:", err);
     } finally {
-      setLoading(false);
+      // Simulate slight delay for smooth animation look if needed or just disable loading immediately
+      setTimeout(() => setLoading(false), 500);
     }
   };
 
@@ -54,14 +58,18 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <MetricCard title="Total Devices" value={stats.total_devices} icon={<Server size={28} />} color="blue" delay={0.1} />
-        <MetricCard title="Active Devices" value={stats.active_devices} icon={<Wifi size={28} />} color="cyan" delay={0.2} />
-        <MetricCard title="Network Health" value={stats.network_health} icon={<Activity size={28} />} color="green" delay={0.3} />
-        <MetricCard title="Alerts Count" value={stats.alerts_count} icon={<ShieldAlert size={28} />} color="red" delay={0.4} />
-        <MetricCard title="Bandwidth Usage" value={stats.bandwidth_usage} icon={<BarChart3 size={28} />} color="primary" delay={0.5} />
-        <MetricCard title="Avg Latency" value={stats.avg_latency} icon={<Activity size={28} />} color="pink" delay={0.6} />
-      </div>
+      {loading ? (
+        <SkeletonLoader type="dashboard" />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <MetricCard title="Total Devices" value={stats.total_devices} icon={<Server size={28} />} color="blue" delay={0.1} />
+          <MetricCard title="Active Devices" value={stats.active_devices} icon={<Wifi size={28} />} color="cyan" delay={0.2} />
+          <MetricCard title="Network Health" value={stats.network_health} icon={<Activity size={28} />} color="green" delay={0.3} />
+          <MetricCard title="Alerts Count" value={stats.alerts_count} icon={<ShieldAlert size={28} />} color="red" delay={0.4} />
+          <MetricCard title="Bandwidth Usage" value={stats.bandwidth_usage} icon={<BarChart3 size={28} />} color="primary" delay={0.5} />
+          <MetricCard title="Avg Latency" value={stats.avg_latency} icon={<Activity size={28} />} color="pink" delay={0.6} />
+        </div>
+      )}
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
         <div className="xl:col-span-2">
