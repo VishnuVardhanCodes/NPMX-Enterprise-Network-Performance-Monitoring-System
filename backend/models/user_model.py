@@ -35,41 +35,26 @@ def create_user(username, password_hash, role='user'):
 
 
 def get_user_by_username(username):
-
     connection = get_connection()
-
     try:
-
-        # VERY IMPORTANT — dictionary cursor
-        with connection.cursor() as cursor:
-
-            sql = """
+        cursor = connection.cursor()
+        query = """
             SELECT id, username, password_hash, role
             FROM users
             WHERE username = %s
-            """
+        """
+        cursor.execute(query, (username,))
+        result = cursor.fetchone()
 
-            cursor.execute(sql, (username,))
-
-            row = cursor.fetchone()
-
-            if not row:
-                return None
-
-            # Convert tuple → dictionary
+        if result:
             return {
-                "id": row[0],
-                "username": row[1],
-                "password_hash": row[2],
-                "role": row[3]
+                "id": result[0],
+                "username": result[1],
+                "password_hash": result[2],
+                "role": result[3]
             }
-
-    except Exception as e:
-
-        print("Fetch user error:", e)
 
         return None
 
     finally:
-
         connection.close()

@@ -54,46 +54,31 @@ def register():
 
 @auth_routes.route('/login', methods=['POST'])
 def login():
-
-    data = request.get_json()
+    data = request.json
 
     username = data.get('username')
     password = data.get('password')
 
-    if not username or not password:
-        return jsonify({
-            "error": "Missing credentials"
-        }), 400
-
     user = get_user_by_username(username)
 
     if not user:
-        return jsonify({
-            "error": "Invalid username"
-        }), 401
+        return jsonify({"error": "Invalid credentials"}), 401
 
-    stored_hash = user['password_hash']
+    if not bcrypt.check_password_hash(
+        user['password_hash'],
+        password
+    ):
+        return jsonify({"error": "Invalid credentials"}), 401
 
-    # Verify password safely
-    if not bcrypt.check_password_hash(stored_hash, password):
-        return jsonify({
-            "error": "Invalid password"
-        }), 401
-
-    # Create JWT token
     access_token = create_access_token(
         identity={
             "id": user['id'],
             "username": user['username'],
             "role": user['role']
-        },
-        expires_delta=datetime.timedelta(hours=24)
+        }
     )
-
-    insert_log(username, "Login Successful")
 
     return jsonify({
         "access_token": access_token,
-        "username": user['username'],
         "role": user['role']
     }), 200
