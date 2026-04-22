@@ -1,37 +1,54 @@
-# NPM-PRO — Network Performance Monitoring System
+# NPMX Enterprise Network Performance Monitoring System
 
-A complete, self-hosted, offline-capable Network Performance Monitoring (NPM) web application with a modern Dashboard built on React, Tailwind, and Framer Motion with a scalable Flask + MySQL Backend.
+NPMX is an enterprise-grade, high-performance network monitoring platform designed for real-time telemetry analysis, topological mapping, and automated performance auditing.
 
-## Features
+## 🚀 Key Features
 
-- **Modern Dashboard UI:** Glassmorphism, animated charts, and dark theme UI layout.
-- **Background Monitoring:** Thread-based background worker that checks server health.
-- **Topology Map:** Visual map of your local instance acting as source monitoring destination nodes.
-- **Detailed Analytics:** Latency, Jitter, Packet Loss, Throughput.
-- **Self-Hosted Offline Mode:** Doesn't require active internet post-installation.
+- **Universal Device Support**: Fully operational for any IP-based node via hybrid ICMP/SNMP telemetry.
+- **Smart Discovery**: Automated subnet scanning (Multi-threaded) to identify and register active inventory.
+- **Topological Mapping**: Interactive ReactFlow-based network diagram with persistent layout memory.
+- **Enterprise Reporting**: Professional PDF audits featuring KPI dashboards and automated CSV data exports.
+- **Self-Healing Loop**: Fault-tolerant monitoring engine with deterministic simulation fallback for non-SNMP nodes.
+- **Security**: JWT-based authentication with role-based access control (RBAC).
 
-## Tech Stack
-- Frontend: ReactJS, Vite, TailwindCSS, Framer Motion, Chart.js
-- Backend: Flask, Python, PySNMP, Ping3
-- Database: MySQL
-- Production Target Server: Apache (Ubuntu 24.04 LTS)
+## 🛠 Tech Stack
 
-## Run Locally (Dev)
-1. Setup DB
-   - Import `database/schema.sql` into MySQL.
-   - Enter credentials in `backend/config.py`.
+- **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion, Recharts, ReactFlow.
+- **Backend**: Python 3.12, Flask, MySQL, ReportLab (PDF Engine).
+- **Core Monitoring**: Raw Python Socket SNMPv1/v2 implementation, Ping3.
 
-2. Backend
-   ```
+## 📦 Installation & Setup
+
+1. **Prerequisites**:
+   - Python 3.12+
+   - Node.js 18+
+   - MySQL Server
+
+2. **Database Initialization**:
+   - Execute the SQL schema provided in `backend/database/schema.sql` (if applicable) or ensure the MySQL service is running with the credentials defined in `database.py`.
+
+3. **Backend Setup**:
+   ```bash
    cd backend
    pip install -r requirements.txt
-   venv\Scripts\activate
    python app.py
    ```
 
-3. Frontend
-   ```
+4. **Frontend Setup**:
+   ```bash
    cd frontend
    npm install
    npm run dev
    ```
+
+## ⚡ Quick Start (Windows)
+Simply run the included automation script:
+```bash
+./run_npmx.bat
+```
+
+## 📐 Architecture
+NPMX utilizes a distributed polling architecture where the backend "Telemetery Engine" executes periodic diagnostics across the infrastructure. Data is persisted in MySQL and streamed to the React dashboard via a secure JSON API.
+
+---
+**Maintained by**: NPMX Core Development Team | *Advanced Agentic Coding Project*

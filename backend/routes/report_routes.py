@@ -2,8 +2,19 @@ import os
 from flask import Blueprint, jsonify, send_file
 from services.report_service import generate_daily_report
 from models.report_model import get_all_reports, get_report_by_date
+from services.csv_service import generate_csv_report
 
 report_routes = Blueprint('report_routes', __name__)
+
+@report_routes.route('/reports/export/csv', methods=['GET'])
+def export_csv():
+    try:
+        path = generate_csv_report()
+        if path and os.path.exists(path):
+            return send_file(path, as_attachment=True, download_name=os.path.basename(path))
+        return jsonify({"error": "Failed to generate CSV"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @report_routes.route('/reports/generate', methods=['POST'])
 def create_report():

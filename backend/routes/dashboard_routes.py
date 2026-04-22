@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from database import get_connection
+from services.health_service import calculate_system_health
 
 dashboard_routes = Blueprint('dashboard_routes', __name__)
 
@@ -23,7 +24,7 @@ def get_dashboard_stats():
             if res: stats["total_devices"] = res["v"]
             
             # 2. Active Devices
-            cursor.execute("SELECT COUNT(*) as v FROM devices WHERE status='active'")
+            cursor.execute("SELECT COUNT(*) as v FROM devices WHERE status IN ('active', 'online')")
             res = cursor.fetchone()
             if res: stats["active_devices"] = res["v"]
             
@@ -45,10 +46,9 @@ def get_dashboard_stats():
             res = cursor.fetchone()
             if res and res["v"]: stats["bandwidth_usage"] = f"{round(res['v'], 1)} Mbps"
             
-            # 6. Network Health (Online ratio)
-            if stats["total_devices"] > 0:
-                health = (stats["active_devices"] / stats["total_devices"]) * 100
-                stats["network_health"] = f"{round(health, 0)}%"
+            # 6. Network Health (Unified Score)
+            health_score = calculate_system_health()
+            stats["network_health"] = f"{health_score}%"
             
             # 7. Traffic Data (Last 10 metrics for a mini-chart fallback)
             cursor.execute("""

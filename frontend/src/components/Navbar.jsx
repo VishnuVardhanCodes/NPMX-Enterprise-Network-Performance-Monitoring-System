@@ -7,6 +7,8 @@ import { getRecentAlertsApi } from '../services/api';
 export default function Navbar({ toggleSidebar }) {
   const [time, setTime] = useState(new Date());
   const [alertCount, setAlertCount] = useState(0);
+  const [alerts, setAlerts] = useState([]);
+  const [isNotifOpen, setIsNotifOpen] = useState(false);
   const lastAlertIdRef = useRef(null);
 
   // Live Timer
@@ -20,6 +22,7 @@ export default function Navbar({ toggleSidebar }) {
     const pollAlerts = async () => {
       try {
         const data = await getRecentAlertsApi();
+        setAlerts(data);
         setAlertCount(data.length);
         
         if (data.length > 0) {
@@ -69,20 +72,62 @@ export default function Navbar({ toggleSidebar }) {
           {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
         </div>
         
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="relative text-gray-400 hover:text-white transition-colors focus:outline-none group">
-          <Bell size={22} className="group-hover:drop-shadow-[0_0_8px_rgba(236,72,153,0.8)] transition-all" />
-          
+        <div className="relative">
+          <motion.button 
+            whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} 
+            onClick={() => setIsNotifOpen(!isNotifOpen)}
+            className="text-gray-400 hover:text-white transition-colors focus:outline-none group p-1"
+          >
+            <Bell size={22} className="group-hover:drop-shadow-[0_0_8px_rgba(236,72,153,0.8)] transition-all" />
+            
+            <AnimatePresence>
+              {alertCount > 0 && (
+                <motion.span 
+                  initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
+                  className="absolute -top-1 -right-1 flex items-center justify-center h-4 w-4 rounded-full bg-red-500 border border-gray-950 text-[10px] font-bold text-white shadow-[0_0_10px_rgba(239,68,68,0.8)]"
+                >
+                  {alertCount}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+
           <AnimatePresence>
-            {alertCount > 0 && (
-              <motion.span 
-                initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}
-                className="absolute -top-2 -right-2 flex items-center justify-center h-4 w-4 rounded-full bg-red-500 border border-gray-950 text-[10px] font-bold text-white shadow-[0_0_10px_rgba(239,68,68,0.8)]"
+            {isNotifOpen && (
+              <motion.div 
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                className="absolute right-0 mt-4 w-80 glass-panel border-white/10 rounded-2xl shadow-2xl p-4 z-50 overflow-hidden bg-gray-950/95"
               >
-                {alertCount}
-              </motion.span>
+                <div className="flex justify-between items-center mb-4">
+                  <h4 className="font-bold text-white">Recent Incidents</h4>
+                  <span className="text-xs text-cyan-400">{alertCount} Active</span>
+                </div>
+                <div className="space-y-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-1">
+                  {alerts.length > 0 ? alerts.map(alt => (
+                    <div key={alt.id} className="p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
+                       <div className="flex justify-between items-start mb-1">
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase ${alt.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-500' : 'bg-yellow-500/20 text-yellow-500'}`}>
+                            {alt.severity}
+                          </span>
+                          <span className="text-[10px] text-gray-500">{new Date(alt.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                       </div>
+                       <p className="text-xs text-gray-300 leading-relaxed">{alt.alert_message}</p>
+                    </div>
+                  )) : (
+                    <p className="text-center text-sm text-gray-500 py-6 italic">No active threats detected</p>
+                  )}
+                </div>
+                {alerts.length > 0 && (
+                   <button className="w-full mt-4 py-2 text-xs font-semibold text-gray-400 hover:text-white border-t border-white/5 transition-colors">
+                     Clear All Notifications
+                   </button>
+                )}
+              </motion.div>
             )}
           </AnimatePresence>
-        </motion.button>
+        </div>
 
         <div className="h-8 w-[1px] bg-white/10 hidden sm:block"></div>
 
