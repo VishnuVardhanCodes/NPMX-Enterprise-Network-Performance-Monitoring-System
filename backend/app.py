@@ -1,5 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask_bcrypt import Bcrypt
 
 from routes.device_routes import device_routes
 from routes.metrics_routes import metrics_bp
@@ -19,42 +20,46 @@ import json
 
 app = Flask(__name__)
 
-# ✅ YOUR REAL FRONTEND DOMAIN
+# ✅ Initialize bcrypt
+bcrypt = Bcrypt(app)
+
+# ✅ Your frontend URL
 FRONTEND_URL = "https://npmx-enterprise-network-performance.vercel.app"
 
-# ✅ PRODUCTION CORS CONFIG (NO "*")
+# ✅ Correct CORS
 CORS(
     app,
     resources={
         r"/api/*": {
             "origins": [
                 FRONTEND_URL,
-                "http://localhost:5173",
-                "http://localhost:3000"
+                "http://localhost:5173"
             ]
         }
     },
     supports_credentials=True
 )
 
-# ✅ HANDLE PREFLIGHT OPTIONS
+# ✅ Proper OPTIONS handling
 @app.after_request
 def after_request(response):
-    response.headers["Access-Control-Allow-Origin"] = FRONTEND_URL
+    origin = request.headers.get("Origin")
+
+    if origin:
+        response.headers["Access-Control-Allow-Origin"] = origin
+
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+
     return response
 
 
 # ==========================
-# JWT CONFIGURATION
+# JWT CONFIG
 # ==========================
 
 app.config['JWT_SECRET_KEY'] = 'npmx-enterprise-super-secret-key-123!'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = 86400
-app.config['JWT_TOKEN_LOCATION'] = ['headers']
-app.config['JWT_HEADER_NAME'] = 'Authorization'
-app.config['JWT_HEADER_TYPE'] = 'Bearer'
 
 jwt = JWTManager(app)
 
@@ -66,45 +71,8 @@ def user_identity_lookup(user_data):
     return str(user_data)
 
 
-@jwt.user_lookup_loader
-def user_lookup_callback(_jwt_header, jwt_data):
-    identity = jwt_data["sub"]
-
-    if isinstance(identity, str):
-        try:
-            return json.loads(identity)
-        except:
-            return identity
-
-    return identity
-
-
-@jwt.invalid_token_loader
-def invalid_token_callback(error):
-    return jsonify({
-        "error": "Invalid token",
-        "message": str(error)
-    }), 401
-
-
-@jwt.unauthorized_loader
-def missing_token_callback(error):
-    return jsonify({
-        "error": "Authorization required",
-        "message": "Missing Bearer Token"
-    }), 401
-
-
-@jwt.expired_token_loader
-def expired_token_callback(jwt_header, jwt_payload):
-    return jsonify({
-        "error": "Token expired",
-        "message": "Please login again"
-    }), 401
-
-
 # ==========================
-# REGISTER BLUEPRINTS
+# REGISTER ROUTES
 # ==========================
 
 app.register_blueprint(device_routes, url_prefix='/api')
@@ -119,20 +87,12 @@ app.register_blueprint(log_routes, url_prefix='/api')
 app.register_blueprint(dashboard_routes, url_prefix='/api')
 
 
-# ==========================
-# ROOT CHECK
-# ==========================
-
 @app.route('/', methods=['GET'])
 def home():
     return jsonify({
         "message": "NPMX Backend Running Successfully 🚀"
     })
 
-
-# ==========================
-# RUN SERVER
-# ==========================
 
 if __name__ == '__main__':
     start_monitor()
