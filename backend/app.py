@@ -19,23 +19,37 @@ import json
 
 app = Flask(__name__)
 
-# ✅ FINAL PRODUCTION CORS FIX
+# ✅ YOUR REAL FRONTEND DOMAIN
+FRONTEND_URL = "https://npmx-enterprise-network-performance.vercel.app"
+
+# ✅ PRODUCTION CORS CONFIG (NO "*")
 CORS(
     app,
-    resources={r"/api/*": {"origins": "*"}},
+    resources={
+        r"/api/*": {
+            "origins": [
+                FRONTEND_URL,
+                "http://localhost:5173",
+                "http://localhost:3000"
+            ]
+        }
+    },
     supports_credentials=True
 )
 
-# ✅ FORCE headers for OPTIONS preflight
+# ✅ HANDLE PREFLIGHT OPTIONS
 @app.after_request
 def after_request(response):
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
-    response.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,DELETE,OPTIONS"
+    response.headers["Access-Control-Allow-Origin"] = FRONTEND_URL
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
     return response
 
 
-# JWT Configuration
+# ==========================
+# JWT CONFIGURATION
+# ==========================
+
 app.config['JWT_SECRET_KEY'] = 'npmx-enterprise-super-secret-key-123!'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = 86400
 app.config['JWT_TOKEN_LOCATION'] = ['headers']
@@ -55,11 +69,13 @@ def user_identity_lookup(user_data):
 @jwt.user_lookup_loader
 def user_lookup_callback(_jwt_header, jwt_data):
     identity = jwt_data["sub"]
+
     if isinstance(identity, str):
         try:
             return json.loads(identity)
         except:
             return identity
+
     return identity
 
 
@@ -87,7 +103,10 @@ def expired_token_callback(jwt_header, jwt_payload):
     }), 401
 
 
-# Register Blueprints
+# ==========================
+# REGISTER BLUEPRINTS
+# ==========================
+
 app.register_blueprint(device_routes, url_prefix='/api')
 app.register_blueprint(metrics_bp, url_prefix='/api')
 app.register_blueprint(snmp_routes, url_prefix='/api')
@@ -100,7 +119,10 @@ app.register_blueprint(log_routes, url_prefix='/api')
 app.register_blueprint(dashboard_routes, url_prefix='/api')
 
 
-# Root Test Route
+# ==========================
+# ROOT CHECK
+# ==========================
+
 @app.route('/', methods=['GET'])
 def home():
     return jsonify({
@@ -108,7 +130,10 @@ def home():
     })
 
 
-# Run App
+# ==========================
+# RUN SERVER
+# ==========================
+
 if __name__ == '__main__':
     start_monitor()
     app.run(host='0.0.0.0', port=5000, debug=True)
