@@ -13,6 +13,11 @@ def get_db_connection():
         database=DB_NAME
     )
 
+from services.snmp_service import get_snmp_bandwidth
+from services.alert_service import check_latency_alert, check_packet_loss_alert, check_bandwidth_alert
+from models.metrics_model import insert_metric
+from models.snmp_model import insert_snmp_metrics, get_latest_snmp_metric
+
 def monitor_device(device):
     device_id, device_name, ip_address, port, snmp_community = device
     
@@ -22,48 +27,44 @@ def monitor_device(device):
     if latency is None:
         packet_loss = 100.0
         latency = 0.0
-    else:
-        # Simplistic view: either reachable or not reachable for this single ping test
-        packet_loss = 0.0
-
-    # 2. SNMP Monitoring (Dummy implementation/fallback since pysnmp setup can be complex for simple local testing)
-    # Note: For production pysnmp, you'd use getCmd from pysnmp.hlapi
-    throughput = 0.0
-    bandwidth = 1000.0  # 1000 Mbps capacity
-    jitter = 0.0
-    if latency > 0:
-        import random
-        # Generating dummy metrics based on latency for visualization purposes
-        throughput = random.uniform(10.0, 500.0)
-        jitter = random.uniform(0.1, 5.0)
     
+    # 2. SNMP Monitoring
+    snmp_data = get_snmp_bandwidth(ip_address, snmp_community, port)
+    bandwidth = 0.0
+    in_octets = 0
+    out_octets = 0
+    
+    if snmp_data:
+        in_octets = snmp_data['in_octets']
+        out_octets = snmp_data['out_octets']
+        current_total = in_octets + out_octets
+        
+        latest_snmp = get_latest_snmp_metric(device_id)
+        if latest_snmp:
+            prev_total = int(latest_snmp['in_octets'] or 0) + int(latest_snmp['out_octets'] or 0)
+            prev_time = latest_snmp['timestamp'].timestamp()
+            curr_time = time.time()
+            time_diff = curr_time - prev_time
+            
+            if time_diff > 0 and current_total >= prev_total:
+                byte_diff = current_total - prev_total
+                bandwidth = round(((byte_diff * 8) / time_diff) / 1000000, 2)
+
     # 3. Store Results Database
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        
         # Save metrics
-        sql = """INSERT INTO metrics 
-                 (device_id, latency, packet_loss, throughput, bandwidth, jitter)
-                 VALUES (%s, %s, %s, %s, %s, %s)"""
-        val = (device_id, latency, packet_loss, throughput, bandwidth, jitter)
-        cursor.execute(sql, val)
+        insert_metric(device_id, latency, packet_loss)
+        if snmp_data:
+            insert_snmp_metrics(device_id, in_octets, out_octets, bandwidth)
         
-        # Determine Alerts
-        if packet_loss == 100.0:
-            alert_sql = "INSERT INTO alerts (device_id, alert_message, severity) VALUES (%s, %s, %s)"
-            cursor.execute(alert_sql, (device_id, f"Device {device_name} ({ip_address}) is unreachable", "High"))
-        elif latency > 100.0:
-            alert_sql = "INSERT INTO alerts (device_id, alert_message, severity) VALUES (%s, %s, %s)"
-            cursor.execute(alert_sql, (device_id, f"High latency on {device_name}: {latency:.2f}ms", "Medium"))
+        # Determine Alerts based on Dynamic Thresholds
+        check_latency_alert(device_id, latency)
+        check_packet_loss_alert(device_id, packet_loss)
+        if bandwidth > 0:
+            check_bandwidth_alert(device_id, bandwidth)
             
-        conn.commit()
     except Exception as e:
-        print(f"Error saving monitoring data: {e}")
-    finally:
-        if 'conn' in locals() and conn.is_connected():
-            cursor.close()
-            conn.close()
+        print(f"Error saving monitoring data for {device_name}: {e}")
 
 def monitoring_task():
     while True:

@@ -9,6 +9,7 @@ from routes.report_routes import report_routes
 from routes.threshold_routes import threshold_routes
 from routes.auth_routes import auth_routes
 from routes.log_routes import log_routes
+from routes.dashboard_routes import dashboard_routes
 from flask_jwt_extended import JWTManager
 from monitor import start_monitor
 
@@ -70,6 +71,7 @@ app.register_blueprint(report_routes, url_prefix='/api')
 app.register_blueprint(threshold_routes, url_prefix='/api')
 app.register_blueprint(auth_routes, url_prefix='/api')
 app.register_blueprint(log_routes, url_prefix='/api')
+app.register_blueprint(dashboard_routes, url_prefix='/api')
 
 @app.route('/', methods=['GET'])
 def home():

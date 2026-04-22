@@ -34,20 +34,20 @@ export default function Monitoring() {
           await pingDeviceApi(selectedDevice);
           const pingData = await getDeviceMetricsApi(selectedDevice);
           
-          const formattedPing = pingData.map(item => {
+          const formattedPing = Array.isArray(pingData) ? pingData.map(item => {
             const date = new Date(item.timestamp);
             return {
               time: `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`,
               latency: item.latency || 0,
             };
-          });
+          }) : [];
           setMetrics(formattedPing);
 
           // 2. SNMP TELEMETRY
           await triggerSnmpApi(selectedDevice);
           const snmpData = await getSnmpMetricsApi(selectedDevice);
           
-          const formattedSnmp = snmpData.map(item => {
+          const formattedSnmp = Array.isArray(snmpData) ? snmpData.map(item => {
             const date = new Date(item.timestamp);
             return {
               time: `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`,
@@ -55,7 +55,7 @@ export default function Monitoring() {
               outOctets: item.out_octets || 0,
               bandwidth: item.bandwidth || 0
             };
-          });
+          }) : [];
           setSnmpMetrics(formattedSnmp);
           
           if(formattedSnmp.length > 0) {

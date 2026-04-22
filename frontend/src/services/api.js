@@ -132,4 +132,9 @@ export const updateThresholdApi = async (id, data) => {
     return res.data;
 };
 
+export const getDashboardStatsApi = async () => {
+    const res = await api.get('/dashboard/stats');
+    return res.data;
+};
+
 export default api;
