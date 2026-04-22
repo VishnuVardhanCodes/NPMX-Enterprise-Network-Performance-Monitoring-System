@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts';
 import ChartCard from '../components/ChartCard';
 import { Play, Square, Activity, Network } from 'lucide-react';
@@ -15,6 +15,7 @@ export default function Monitoring() {
   const [currentBandwidth, setCurrentBandwidth] = useState(0);
   
   const [isMonitoring, setIsMonitoring] = useState(false);
+  const [isSimulated, setIsSimulated] = useState(false);
   
   // Load Available Devices
   useEffect(() => {
@@ -31,11 +32,19 @@ export default function Monitoring() {
       const cycle = async () => {
         try {
           // 1. PING TELEMETRY
-          await pingDeviceApi(selectedDevice);
-          const pingData = await getDeviceMetricsApi(selectedDevice);
+          let pingData = [];
+          try {
+            await pingDeviceApi(selectedDevice);
+            pingData = await getDeviceMetricsApi(selectedDevice);
+          } catch (e) {
+            console.warn("Ping API Failed", e);
+            pingData = [{ timestamp: new Date().toISOString(), latency: 0, packet_loss: 100, is_fallback: true }];
+          }
           
+          let simulated = false;
           const formattedPing = Array.isArray(pingData) ? pingData.map(item => {
             const date = new Date(item.timestamp);
+            if (item.is_fallback) simulated = true;
             return {
               time: `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`,
               latency: item.latency || 0,
@@ -44,11 +53,20 @@ export default function Monitoring() {
           setMetrics(formattedPing);
 
           // 2. SNMP TELEMETRY
-          await triggerSnmpApi(selectedDevice);
-          const snmpData = await getSnmpMetricsApi(selectedDevice);
+          let snmpData = [];
+          try {
+            const snmpRes = await triggerSnmpApi(selectedDevice);
+            if (snmpRes.is_simulated) simulated = true;
+            snmpData = await getSnmpMetricsApi(selectedDevice);
+          } catch (e) {
+            console.warn("SNMP API Failed", e);
+            snmpData = [{ timestamp: new Date().toISOString(), in_octets: 1000, out_octets: 1000, bandwidth: 1.2, is_fallback: true }];
+            simulated = true;
+          }
           
           const formattedSnmp = Array.isArray(snmpData) ? snmpData.map(item => {
             const date = new Date(item.timestamp);
+            if (item.is_fallback) simulated = true;
             return {
               time: `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`,
               inOctets: item.in_octets || 0,
@@ -57,13 +75,13 @@ export default function Monitoring() {
             };
           }) : [];
           setSnmpMetrics(formattedSnmp);
+          setIsSimulated(simulated);
           
           if(formattedSnmp.length > 0) {
               setCurrentBandwidth(formattedSnmp[formattedSnmp.length - 1].bandwidth);
           }
-          
-        } catch (error) {
-          console.error("Telemetry Cycle Failure", error);
+        } catch (globalErr) {
+          console.error("Critical Telemetry Loop Error:", globalErr);
         }
       };
       
@@ -124,6 +142,17 @@ export default function Monitoring() {
             </span>
             {isMonitoring ? 'Streaming Live' : 'Offline'}
           </div>
+
+          <AnimatePresence>
+            {isSimulated && (
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}
+                className="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-500 border border-amber-500/20 text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(245,158,11,0.1)]"
+              >
+                Simulated Data Mode
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
@@ -169,8 +198,8 @@ export default function Monitoring() {
             {/* ICMP LATENCY CHART */}
             <div className="lg:col-span-2">
               <ChartCard title="ICMP Latency Graph (ms)" delay={0.1}>
-                <div className="h-[250px]">
-                   <ResponsiveContainer width="100%" height="100%">
+                <div className="w-full h-[300px] min-h-[300px]">
+                   <ResponsiveContainer width="100%" height={300}>
                     <LineChart data={metrics}>
                       <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                       <XAxis dataKey="time" stroke="#6b7280" tick={{fill: '#9ca3af', fontSize: 12}} axisLine={false} tickLine={false} />
@@ -195,8 +224,8 @@ export default function Monitoring() {
             
             {/* SNMP BANDWIDTH LINE */}
             <ChartCard title="Calculated Bandwidth Trend (Mbps)" delay={0.2}>
-              <div className="h-[300px]">
-                 <ResponsiveContainer width="100%" height="100%">
+              <div className="w-full h-[300px] min-h-[300px]">
+                 <ResponsiveContainer width="100%" height={300}>
                   <AreaChart data={snmpMetrics}>
                     <defs>
                       <linearGradient id="colorBw" x1="0" y1="0" x2="0" y2="1">
@@ -220,8 +249,8 @@ export default function Monitoring() {
 
             {/* RAW INTERFACE TRAFFIC */}
             <ChartCard title="Raw Interface Traffic (Octets)" delay={0.3}>
-              <div className="h-[300px]">
-                 <ResponsiveContainer width="100%" height="100%">
+              <div className="w-full h-[300px] min-h-[300px]">
+                 <ResponsiveContainer width="100%" height={300}>
                   <LineChart data={snmpMetrics}>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                     <XAxis dataKey="time" stroke="#6b7280" tick={{fill: '#9ca3af', fontSize: 12}} axisLine={false} tickLine={false} />

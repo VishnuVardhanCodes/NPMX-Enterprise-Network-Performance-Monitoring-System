@@ -12,6 +12,8 @@ export default function DeviceTable({ devices, onDelete }) {
         return { color: 'text-yellow-400', bg: 'bg-yellow-400/10', border: 'border-yellow-500/20', icon: <Activity size={14} />, glow: 'shadow-[0_0_10px_rgba(250,204,21,0.2)]' };
       case 'offline':
         return { color: 'text-red-400', bg: 'bg-red-400/10', border: 'border-red-500/20', icon: <PowerOff size={14} />, glow: 'shadow-[0_0_10px_rgba(248,113,113,0.2)]' };
+      case 'simulated':
+        return { color: 'text-amber-400', bg: 'bg-amber-400/10', border: 'border-amber-500/20', icon: <Activity size={14} />, glow: 'shadow-[0_0_10px_rgba(245,158,11,0.2)]' };
       default:
         return { color: 'text-gray-400', bg: 'bg-gray-400/10', border: 'border-gray-500/20', icon: <Wifi size={14} />, glow: '' };
     }

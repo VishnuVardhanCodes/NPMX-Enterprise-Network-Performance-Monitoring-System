@@ -15,6 +15,7 @@ import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import SystemLogs from './pages/SystemLogs';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const PageWrapper = ({ children }) => (
   <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.4 }} className="h-full">
@@ -58,7 +59,7 @@ function App() {
           
           <Route path="/" element={<ProtectedRoute><PageWrapper><Dashboard /></PageWrapper></ProtectedRoute>} />
           <Route path="/devices" element={<ProtectedRoute><PageWrapper><Devices /></PageWrapper></ProtectedRoute>} />
-          <Route path="/monitoring" element={<ProtectedRoute><PageWrapper><Monitoring /></PageWrapper></ProtectedRoute>} />
+          <Route path="/monitoring" element={<ProtectedRoute><PageWrapper><ErrorBoundary><Monitoring /></ErrorBoundary></PageWrapper></ProtectedRoute>} />
           <Route path="/map" element={<ProtectedRoute><PageWrapper><NetworkMap /></PageWrapper></ProtectedRoute>} />
           <Route path="/alerts" element={<ProtectedRoute><PageWrapper><Alerts /></PageWrapper></ProtectedRoute>} />
           <Route path="/reports" element={<ProtectedRoute><PageWrapper><Reports /></PageWrapper></ProtectedRoute>} />

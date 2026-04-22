@@ -1,0 +1,427 @@
+[2026-04-22 11:08:05.490546] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:08:12.569731] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:08:12.651248] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:08:38.089026] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:08:41.232183] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:08:41.270939] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:08:58.408138] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:09:02.974443] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:09:03.052366] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:09:20.180584] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:09:23.305149] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:09:23.370006] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:09:40.512746] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:09:43.673705] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:09:43.768267] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:10:00.893865] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:10:03.978225] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:10:04.059748] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:10:21.210011] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:10:24.891405] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:10:24.966154] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:10:42.058158] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:10:45.196429] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:10:45.276810] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:11:02.384352] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:11:05.748675] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:11:05.768215] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:11:22.891480] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:11:26.049608] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:11:26.077907] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:11:43.186971] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:11:46.300550] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:11:46.369405] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:12:03.490946] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:12:06.640151] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:12:06.719722] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:12:23.856846] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:12:27.004045] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:12:27.098777] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:12:44.252371] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:12:47.389167] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:12:47.443137] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:13:04.541252] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:13:07.679705] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:13:07.774029] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:13:24.861616] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:13:27.973396] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:13:28.028578] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:13:49.797451] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:13:50.830301] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:13:52.910812] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:13:52.975984] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:13:53.956622] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:13:54.038011] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:10.119574] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:11.132056] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:13.247283] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:13.281739] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:14.235071] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:14.294576] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:30.425078] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:31.392118] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:33.591012] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:33.646768] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:34.522185] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:34.605249] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:50.783747] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:51.749181] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:14:53.883788] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:53.963873] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:14:54.915764] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:14:55.001823] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:11.065328] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:12.124589] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:14.167656] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:14.225031] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:15.237092] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:15.300624] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:31.398846] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:32.446339] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:34.534399] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:34.630627] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:35.595014] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:35.697469] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:51.790931] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:52.829214] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:15:54.929977] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:55.028893] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:15:55.959926] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:15:56.000948] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:12.132926] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:13.158928] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:15.242271] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:15.307217] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:16.288244] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:16.384349] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:32.520665] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:33.543021] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:35.628085] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:35.669423] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:36.631441] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:36.661412] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:52.824510] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:53.792041] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:16:55.888434] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:55.954910] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:16:56.928493] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:16:56.977268] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:13.105020] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:14.145747] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:16.203442] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:16.267948] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:17.246430] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:17.287185] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:33.402331] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:34.433880] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:36.537864] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:36.590743] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:37.566756] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:37.614963] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:53.700855] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:54.782434] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:17:56.822076] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:56.857188] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:17:57.917544] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:17:57.982161] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:13.953026] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:15.104002] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:17.534534] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:17.564982] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:18.656441] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:18.707052] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:34.681558] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:35.830010] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:37.770890] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:37.826660] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:38.933073] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:38.967397] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:54.922278] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:56.098038] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:18:58.011517] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:58.086618] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:18:59.185162] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:18:59.262991] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:19:15.173779] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:16.404819] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:18.286310] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:19:18.324584] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:19:19.514365] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:19:19.600626] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:19:35.434995] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:36.755866] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:38.593193] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:19:38.625242] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:19:39.856731] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:19:39.912619] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:19:55.764899] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:57.063795] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:19:58.838218] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:19:58.917519] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:00.193807] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:20:00.258928] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:16.036522] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:17.394884] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:19.167577] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:20:19.205712] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:20.547033] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:20:20.615456] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:36.389821] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:37.758097] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:39.505908] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:20:39.525860] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:40.911284] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:20:40.946809] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:20:56.611524] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:58.033796] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:20:59.995821] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:00.060180] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:01.297187] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:01.381041] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:17.188560] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:21:18.503266] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:21:20.999746] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:21.052864] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:22.038391] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:22.078822] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:38.171128] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:21:39.192820] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:21:41.351134] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:41.380877] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:42.313332] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:21:42.378730] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:48.162854] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:52.748695] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:58.058522] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:21:58.523751] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:21:59.503898] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:22:01.635197] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:01.700228] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:02.652962] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:02.716331] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:18.910298] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:22:19.859372] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:22:22.035112] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:22.074698] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:23.016511] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:23.065973] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:39.225877] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:22:40.228352] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:22:42.341433] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:42.375778] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:43.345068] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:22:43.387957] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:22:59.495713] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:00.514991] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:02.606971] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:23:02.690483] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:23:03.900182] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:23:03.933706] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:23:19.829973] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:21.098983] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:23.017465] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:23:23.047507] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:23:38.104892] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:40.303341] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:23:41.253016] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:23:41.367037] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:23:43.500091] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:23:43.628742] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:23:58.611299] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:00.793045] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:01.788391] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:01.867284] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:04.000091] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:04.096327] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:18.995318] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:21.266642] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:22.187623] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:22.270021] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:24.400296] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:24.495954] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:39.447169] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:41.692411] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:24:42.550088] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:42.616332] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:44.852603] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:24:44.930554] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:24:59.781128] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:02.086510] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:02.879029] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:02.943735] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:25:05.218865] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:05.312669] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:25:20.157465] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:22.423748] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:23.251156] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:23.285247] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:25:25.531716] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:25.584025] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:25:40.441308] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:42.734654] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:25:43.586418] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:43.638009] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:25:45.848120] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:25:45.922859] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:00.751637] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:03.084573] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:03.843036] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:03.893518] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:06.203747] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:06.243739] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:19.685511] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:21.018410] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:23.369116] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:24.132840] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:24.165405] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:26.508189] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:26.601497] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:41.340922] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:43.711698] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:26:44.425750] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:44.475196] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:26:46.856964] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:26:46.936497] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:01.589969] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:04.098430] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:04.847707] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:04.902756] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:07.238074] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:07.313187] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:22.059531] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:24.460785] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:25.340325] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:25.415186] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:27.683840] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:27.748679] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:42.535639] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:44.894437] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:27:46.026650] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:46.088781] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:27:48.261841] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:27:48.358685] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:03.231475] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:05.490642] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:06.322207] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:06.379504] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:08.715712] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:08.771634] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:23.501887] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:25.854111] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:26.648092] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:26.726713] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:28.973835] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:29.031677] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:43.856023] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:46.129178] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:28:46.989949] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:47.052596] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:28:49.282804] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:28:49.365649] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:04.148441] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:06.508695] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:07.272850] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:07.353263] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:09.600084] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:09.639922] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:24.461902] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:26.735439] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:27.571234] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:27.626758] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:29.929991] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:29.994222] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:44.725819] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:47.127803] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:29:47.847760] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:47.917118] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:29:50.234796] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:29:50.299759] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:30:05.056434] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:07.404733] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:08.176329] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:30:08.228315] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:30:10.599116] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:30:10.679340] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:30:25.385671] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:27.830654] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:29.129084] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:30:29.180127] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:30:37.043498] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:46.260861] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:47.192057] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:30:49.400341] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:30:49.492573] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:30:50.875207] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:30:50.942544] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:04.279977] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:06.617075] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:07.923393] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:07.977117] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:09.708434] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:09.749619] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:25.148215] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:26.889998] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:28.294248] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:28.385971] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:30.096331] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:30.184870] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:45.506928] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:47.287880] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:31:48.608474] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:48.679098] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:31:50.413700] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:31:50.506587] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:05.808377] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:07.591735] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:09.130170] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:09.184642] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:10.738864] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:10.803656] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:26.331714] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:27.953585] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:29.432290] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:29.480077] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:31.080196] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:31.132345] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:40.833865] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:43.933645] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:43.984538] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:32:48.253933] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:32:51.385617] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:32:51.421003] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:12.335456] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:13.225753] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:15.462829] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:15.542855] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:16.352595] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:16.417152] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:32.663668] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:33.583290] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:35.837600] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:35.870261] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:37.058535] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:37.154023] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:52.982222] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:54.283700] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:33:56.075213] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:56.139708] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:33:57.988939] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:33:58.067974] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:13.270958] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:15.157047] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:16.357295] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:16.421831] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:18.281045] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:18.321675] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:33.538641] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:35.440615] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:36.654350] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:36.718842] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:38.541127] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:38.590801] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:53.844492] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:55.715123] SNMP Error for 192.168.1.1: timed out
+[2026-04-22 11:34:56.944922] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:57.009506] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-22 11:34:58.799470] SNMP Error for 8.8.8.8: timed out
+[2026-04-22 11:34:58.847855] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host

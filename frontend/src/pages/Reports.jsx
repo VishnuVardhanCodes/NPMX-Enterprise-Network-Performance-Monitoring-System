@@ -112,7 +112,7 @@ export default function Reports() {
                   <td className="p-5 pr-6">
                     <div className="flex justify-end gap-2">
                        <a 
-                          href={downloadReportUrl(report.report_date)}
+                          href={downloadReportUrl(new Date(report.report_date).toISOString().split('T')[0])}
                           target="_blank" rel="noopener noreferrer"
                           className="flex items-center gap-2 p-2 px-4 shadow-[0_0_10px_rgba(255,255,255,0.05)] text-gray-300 bg-white/5 hover:text-white hover:bg-cyan-500/20 hover:border-cyan-500/50 rounded-xl border border-white/10 transition-all focus:outline-none uppercase text-xs tracking-wider font-bold"
                        >

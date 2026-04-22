@@ -92,5 +92,6 @@ def generate_daily_report():
     return {
         "date": date_str,
         "stats": stats,
-        "pdf_path": pdf_path
+        "pdf_path": pdf_path,
+        "download_url": f"/api/reports/download/daily_report_{date_str}.pdf"
     }

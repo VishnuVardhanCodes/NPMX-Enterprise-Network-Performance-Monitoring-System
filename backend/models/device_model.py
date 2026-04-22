@@ -15,8 +15,7 @@ def get_all_devices():
     return result
 
 
-def add_device(device_name, ip_address, port, snmp_community):
-
+def add_device(device_name, ip_address, port, snmp_community, status="active"):
     connection = get_connection()
     cursor = connection.cursor()
 
@@ -31,11 +30,10 @@ def add_device(device_name, ip_address, port, snmp_community):
         ip_address,
         port,
         snmp_community,
-        "active"
+        status or "active"
     ))
 
     connection.commit()
-
     cursor.close()
     connection.close()
 

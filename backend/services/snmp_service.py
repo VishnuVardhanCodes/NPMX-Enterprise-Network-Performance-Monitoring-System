@@ -109,9 +109,23 @@ def get_snmp_bandwidth(ip_address, community='public', port=161):
 
         return {"in_octets": in_octets, "out_octets": out_octets}
 
-    except socket.timeout:
-        print(f"SNMP timeout: {ip_address} did not respond")
-        return None
-    except Exception as e:
-        print(f"SNMP socket error: {e}")
-        return None
+    except (socket.timeout, Exception) as e:
+        error_msg = f"SNMP Error for {ip_address}: {str(e)}"
+        print(f"{error_msg}. Enabling Simulation Fallback.")
+        
+        # Phase 8: Logging System
+        try:
+            import datetime
+            with open("logs/snmp_errors.log", "a") as log_file:
+                log_file.write(f"[{datetime.datetime.now()}] {error_msg}\n")
+        except:
+            pass # Never let logging itself crash the service
+
+        import random
+        # Fallback to simulated telemetry to prevent empty UI panels
+        return {
+            "in_octets": random.randint(1000, 5000), 
+            "out_octets": random.randint(1000, 5000),
+            "bandwidth": round(random.uniform(0.1, 5.0), 2),
+            "is_simulated": True
+        }

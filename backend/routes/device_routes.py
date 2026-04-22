@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, current_user
-from models.device_model import get_all_devices, add_device, delete_device
+from models.device_model import get_all_devices, delete_device
+from services.device_service import validate_and_add_device
 from models.log_model import insert_log
 
 device_routes = Blueprint("device_routes", __name__)
@@ -19,10 +20,10 @@ def create_device():
 
     data = request.json
     device_name = data["device_name"]
-    add_device(device_name, data["ip_address"], data["port"], data["snmp_community"])
+    result = validate_and_add_device(device_name, data["ip_address"], data["port"], data["snmp_community"])
     
-    insert_log(current_user['username'], f"Device Added: {device_name}")
-    return jsonify({"message": "Device added successfully"})
+    insert_log(current_user['username'], f"Device Added: {device_name} (Status: {result['status']})")
+    return jsonify(result)
 
 @device_routes.route("/devices/<int:id>", methods=["DELETE"])
 @jwt_required()
