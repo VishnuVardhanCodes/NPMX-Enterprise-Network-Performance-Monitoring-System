@@ -19,20 +19,21 @@ import json
 
 app = Flask(__name__)
 
-# ✅ FIXED CORS — allows Vercel + localhost
+# ✅ FINAL PRODUCTION CORS FIX
 CORS(
     app,
-    resources={
-        r"/api/*": {
-            "origins": [
-                "https://npmx-enterprise-network-performance.vercel.app",
-                "http://localhost:5173",
-                "http://localhost:3000"
-            ]
-        }
-    },
+    resources={r"/api/*": {"origins": "*"}},
     supports_credentials=True
 )
+
+# ✅ FORCE headers for OPTIONS preflight
+@app.after_request
+def after_request(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,DELETE,OPTIONS"
+    return response
+
 
 # JWT Configuration
 app.config['JWT_SECRET_KEY'] = 'npmx-enterprise-super-secret-key-123!'
@@ -43,14 +44,14 @@ app.config['JWT_HEADER_TYPE'] = 'Bearer'
 
 jwt = JWTManager(app)
 
-# JWT Identity Loader
+
 @jwt.user_identity_loader
 def user_identity_lookup(user_data):
     if isinstance(user_data, (dict, list)):
         return json.dumps(user_data)
     return str(user_data)
 
-# JWT User Lookup
+
 @jwt.user_lookup_loader
 def user_lookup_callback(_jwt_header, jwt_data):
     identity = jwt_data["sub"]
@@ -61,13 +62,14 @@ def user_lookup_callback(_jwt_header, jwt_data):
             return identity
     return identity
 
-# JWT Error Handlers
+
 @jwt.invalid_token_loader
 def invalid_token_callback(error):
     return jsonify({
         "error": "Invalid token",
         "message": str(error)
     }), 401
+
 
 @jwt.unauthorized_loader
 def missing_token_callback(error):
@@ -76,12 +78,14 @@ def missing_token_callback(error):
         "message": "Missing Bearer Token"
     }), 401
 
+
 @jwt.expired_token_loader
 def expired_token_callback(jwt_header, jwt_payload):
     return jsonify({
         "error": "Token expired",
         "message": "Please login again"
     }), 401
+
 
 # Register Blueprints
 app.register_blueprint(device_routes, url_prefix='/api')
@@ -95,12 +99,14 @@ app.register_blueprint(auth_routes, url_prefix='/api')
 app.register_blueprint(log_routes, url_prefix='/api')
 app.register_blueprint(dashboard_routes, url_prefix='/api')
 
+
 # Root Test Route
 @app.route('/', methods=['GET'])
 def home():
     return jsonify({
         "message": "NPMX Backend Running Successfully 🚀"
     })
+
 
 # Run App
 if __name__ == '__main__':
