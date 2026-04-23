@@ -8,8 +8,37 @@ export default function Settings() {
   const [devices, setDevices] = useState([]);
   const [selectedDevice, setSelectedDevice] = useState('');
   
+  const [latency, setLatency] = useState(100);
+  const [packetLoss, setPacketLoss] = useState(5);
+  const [bandwidth, setBandwidth] = useState(500);
+  const [isLoading, setIsLoading] = useState(false);
+  
   const [interval, setIntervalVal] = useState(5);
   const [isDarkMode, setIsDarkMode] = useState(true);
+
+  // Load target nodes
+  useEffect(() => {
+    getDevicesApi().then(data => {
+      setDevices(data);
+      if (data.length > 0) setSelectedDevice(data[0].id.toString());
+    }).catch(() => toast.error('Infrastucture registry inaccessible'));
+  }, []);
+
+  // Sync threshold parameters on node selection
+  useEffect(() => {
+    if (selectedDevice) {
+      setIsLoading(true);
+      getThresholdApi(selectedDevice)
+        .then(data => {
+          if (data) {
+            setLatency(data.latency_threshold);
+            setPacketLoss(data.packet_loss_threshold);
+            setBandwidth(data.bandwidth_threshold);
+          }
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [selectedDevice]);
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -62,7 +91,7 @@ export default function Settings() {
 
             <form onSubmit={handleSave} className="space-y-10">
               <AnimatePresence mode="wait">
-                {!isLoading && (
+                {!isLoading ? (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-8">
                       <div className="space-y-6">
                         <div className="space-y-4">
@@ -106,6 +135,10 @@ export default function Settings() {
                          </motion.button>
                       </div>
                   </motion.div>
+                ) : (
+                  <div className="h-48 flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500"></div>
+                  </div>
                 )}
               </AnimatePresence>
             </form>

@@ -10,11 +10,16 @@ def test_routes():
     except Exception as e:
         print(f"Home error: {e}")
 
-    # Test Login (with fake data)
+    # Test Dashboard Stats
     try:
-        res = requests.post(f"{BASE_URL}/login", json={"username": "admin", "password": "admin123"})
-        print(f"Login: {res.status_code} - {res.json().get('message', 'No message')}")
-        token = res.json().get('access_token')
+        res = requests.get(f"{BASE_URL}/dashboard/stats")
+        print(f"Stats: {res.status_code}")
+        data = res.json()
+        print(f"Traffic Data: {data.get('traffic_data')}")
+        print(f"Avg Latency: {data.get('avg_latency')}")
+    except Exception as e:
+        print(f"Stats error: {e}")
+
         
         if token:
             headers = {"Authorization": f"Bearer {token}"}

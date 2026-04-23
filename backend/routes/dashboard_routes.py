@@ -33,15 +33,15 @@ def get_dashboard_stats():
             res = cursor.fetchone()
             if res: stats["alerts_count"] = res["v"]
             
-            # 4. Avg Latency
-            cursor.execute("SELECT AVG(latency) as v FROM metrics WHERE latency > 0")
+            # 4. Avg Latency (Last 24 Hours)
+            cursor.execute("SELECT AVG(latency) as v FROM metrics WHERE latency > 0 AND timestamp > DATE_SUB(NOW(), INTERVAL 24 HOUR)")
             res = cursor.fetchone()
             if res and res["v"]: stats["avg_latency"] = f"{round(res['v'], 1)} ms"
             
             # 5. Bandwidth Usage (Current sum of latest bandwidth)
             cursor.execute("""
                 SELECT SUM(bandwidth) as v FROM snmp_metrics 
-                WHERE timestamp > DATE_SUB(NOW(), INTERVAL 5 MINUTE)
+                WHERE timestamp > DATE_SUB(NOW(), INTERVAL 1 HOUR)
             """)
             res = cursor.fetchone()
             if res and res["v"]: stats["bandwidth_usage"] = f"{round(res['v'], 1)} Mbps"
@@ -50,14 +50,16 @@ def get_dashboard_stats():
             health_score = calculate_system_health()
             stats["network_health"] = f"{health_score}%"
             
-            # 7. Traffic Data (Last 10 metrics for a mini-chart fallback)
+            # 7. Traffic Data (Last 10 minutes of averaged data, or last 10 points)
             cursor.execute("""
                 SELECT DATE_FORMAT(timestamp, '%H:%i') as time, AVG(latency) as value 
                 FROM metrics 
+                WHERE timestamp > DATE_SUB(NOW(), INTERVAL 24 HOUR)
                 GROUP BY time 
-                ORDER BY time DESC LIMIT 7
+                ORDER BY MIN(timestamp) DESC LIMIT 15
             """)
             rows = cursor.fetchall()
+            # Sort by time to show chronological order on graph
             stats["traffic_data"] = sorted(rows, key=lambda x: x['time'])
 
         return jsonify(stats), 200
