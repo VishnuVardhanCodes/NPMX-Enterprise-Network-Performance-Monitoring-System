@@ -38,9 +38,9 @@ export default function SystemLogs() {
 
   return (
     <div className="space-y-6 pb-12">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+      <div className="flex flex-col items-center justify-center text-center gap-4 mb-8">
         <div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 flex items-center gap-3">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 flex items-center justify-center gap-3">
             <Terminal size={32} className="text-emerald-500" /> System Audit Trail
           </h2>
           <p className="text-gray-400 mt-1">Immutable ledger tracking enterprise access records and physical configuration overrides.</p>

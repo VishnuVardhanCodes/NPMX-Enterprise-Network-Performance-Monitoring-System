@@ -57,12 +57,12 @@ export default function Settings() {
 
   return (
     <div className="space-y-8 pb-12 max-w-5xl mx-auto">
-      <div className="flex justify-between items-end mb-4 border-b border-white/5 pb-6 text-center md:text-left">
+      <div className="flex flex-col items-center justify-center mb-4 border-b border-white/5 pb-6 text-center">
         <div>
-           <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center md:justify-start gap-3">
+           <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400 flex items-center justify-center gap-3">
             <SettingsIcon size={32} className="text-teal-500" /> Platform Configuration
           </h2>
-          <p className="text-gray-400 mt-2 text-sm max-w-lg">Modify infrastructure mechanics, alert limits, and boundary constants securely.</p>
+          <p className="text-gray-400 mt-2 text-sm max-w-lg mx-auto">Modify infrastructure mechanics, alert limits, and boundary constants securely.</p>
         </div>
       </div>
 

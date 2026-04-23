@@ -37,9 +37,9 @@ export default function Reports() {
 
   return (
     <div className="space-y-6 pb-12">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+      <div className="flex flex-col items-center justify-center text-center gap-4 mb-8">
         <div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 flex items-center gap-3">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 flex items-center justify-center gap-3">
             <FileText size={32} className="text-blue-500" /> Automated Reporting
           </h2>
           <p className="text-gray-400 mt-1">Generate deep topological and ICMP performance metrics as PDF audits</p>

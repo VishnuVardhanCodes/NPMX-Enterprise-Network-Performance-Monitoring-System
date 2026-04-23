@@ -113,9 +113,9 @@ export default function NetworkMap() {
 
   return (
     <div className="h-full flex flex-col space-y-4 pb-12">
-      <div className="flex justify-between items-end mb-4">
+      <div className="flex flex-col items-center justify-center text-center gap-4 mb-4">
         <div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 flex items-center gap-3">
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 flex items-center justify-center gap-3">
             <Network size={32} className="text-cyan-500" /> Infrastructure Map
           </h2>
           <p className="text-gray-400 mt-1">Interactive network diagram mapping physical and virtual data connections</p>

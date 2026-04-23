@@ -96,9 +96,9 @@ export default function Monitoring() {
   return (
     <div className="space-y-6 pb-20">
       {/* HEADER & CONTROLS */}
-      <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div className="mb-8 flex flex-col items-center justify-center text-center gap-4">
         <div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Advanced Telemetry</h2>
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 justify-center">Advanced Telemetry</h2>
           <p className="text-gray-400 mt-1">Live ICMP Latency & SNMP Network Traffic</p>
         </div>
         

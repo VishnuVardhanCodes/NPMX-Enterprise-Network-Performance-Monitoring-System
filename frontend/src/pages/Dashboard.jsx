@@ -48,9 +48,9 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6 pb-20">
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex flex-col items-center justify-center text-center mb-8 gap-4">
         <div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Network Overview</h2>
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 justify-center">Network Overview</h2>
           <p className="text-gray-400 mt-1">Real-time performance and active incidents</p>
         </div>
         <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium text-gray-300 backdrop-blur-md">
