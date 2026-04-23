@@ -84,6 +84,17 @@ def user_identity_lookup(user_data):
     return str(user_data)
 
 
+@jwt.user_lookup_loader
+def user_lookup_callback(_jwt_header, jwt_data):
+    identity = jwt_data["sub"]
+    if isinstance(identity, str):
+        try:
+            return json.loads(identity)
+        except:
+            return identity
+    return identity
+
+
 # ==========================
 # REGISTER ROUTES
 # ==========================

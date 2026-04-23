@@ -174,7 +174,7 @@ export default function Monitoring() {
               <p className="text-gray-400 text-xs mb-4">Calculated SNMP Payload</p>
               
               <div className="relative w-full h-[200px] flex items-center justify-center">
-                 <ResponsiveContainer width="100%" height="100%">
+                 <ResponsiveContainer width="100%" height={200}>
                   <RadialBarChart 
                     cx="50%" cy="50%" 
                     innerRadius="70%" outerRadius="100%" 
