@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
+import logging
+import os
+from config import FRONTEND_URL, JWT_SECRET_KEY
 
 from routes.device_routes import device_routes
 from routes.metrics_routes import metrics_bp
@@ -18,13 +21,23 @@ from monitor import start_monitor
 
 import json
 
+# ==========================
+# LOGGING CONFIG
+# ==========================
+if not os.path.exists("logs"):
+    os.makedirs("logs")
+
+logging.basicConfig(
+    filename="logs/app.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
 app = Flask(__name__)
+logging.info("Application started successfully.")
 
 # ✅ Initialize bcrypt
 bcrypt = Bcrypt(app)
-
-# ✅ Your frontend URL
-FRONTEND_URL = "http://localhost:5173"
 
 # ✅ Correct CORS
 CORS(
@@ -58,7 +71,7 @@ def after_request(response):
 # JWT CONFIG
 # ==========================
 
-app.config['JWT_SECRET_KEY'] = 'npmx-enterprise-super-secret-key-123!'
+app.config['JWT_SECRET_KEY'] = JWT_SECRET_KEY or 'npmx-enterprise-super-secret-key-123!'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = 86400
 
 jwt = JWTManager(app)
@@ -96,4 +109,4 @@ def home():
 
 if __name__ == '__main__':
     start_monitor()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
