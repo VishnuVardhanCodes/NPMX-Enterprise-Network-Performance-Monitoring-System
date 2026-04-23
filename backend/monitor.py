@@ -1,17 +1,10 @@
 import time
 import threading
 from ping3 import ping
-import mysql.connector
-from datetime import datetime
-from config import MYSQL_HOST as DB_HOST, MYSQL_USER as DB_USER, MYSQL_PASSWORD as DB_PASSWORD, MYSQL_DATABASE as DB_NAME
+from database import get_connection
 
 def get_db_connection():
-    return mysql.connector.connect(
-        host=DB_HOST,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        database=DB_NAME
-    )
+    return get_connection()
 
 from services.snmp_service import get_snmp_bandwidth
 from services.alert_service import check_latency_alert, check_packet_loss_alert, check_bandwidth_alert
@@ -19,7 +12,11 @@ from models.metrics_model import insert_metric
 from models.snmp_model import insert_snmp_metrics, get_latest_snmp_metric
 
 def monitor_device(device):
-    device_id, device_name, ip_address, port, snmp_community = device
+    device_id = device['id']
+    device_name = device['device_name']
+    ip_address = device['ip_address']
+    port = device['port']
+    snmp_community = device['snmp_community']
     
     # 1. Ping Monitoring
     latency = ping(ip_address, unit='ms')

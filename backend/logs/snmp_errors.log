@@ -1013,3 +1013,163 @@
 [2026-04-23 00:25:08.608691] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
 [2026-04-23 00:25:10.608602] SNMP Error for 8.8.8.8: timed out
 [2026-04-23 00:25:10.652421] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:48:33.334848] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:35.218591] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:36.232788] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:38.003827] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:39.015000] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:40.787714] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:51.849148] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:53.636170] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:54.663353] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:56.416118] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:57.490279] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:48:59.202539] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:10.298232] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:12.036938] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:13.112079] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:14.807126] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:15.913516] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:17.591688] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:28.725803] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:30.435775] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:31.513179] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:33.226157] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:34.293549] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:36.022864] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:47.092123] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:48.852847] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:49.864034] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:51.631456] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:52.641347] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:49:54.413655] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:05.463064] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:07.234418] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:08.247209] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:10.024807] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:11.053720] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:12.818137] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:23.859176] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:25.613448] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:26.624005] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:28.412657] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:29.450576] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:31.159619] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:42.257864] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:43.961695] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:45.029783] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:47.821270] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:52.545312] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:55.300992] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:50:58.070940] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:00.608228] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:03.346214] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:06.094021] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:10.859271] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:13.694189] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:16.475034] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:18.907115] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:21.686380] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:24.464775] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:29.290456] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:32.042563] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:34.869902] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:37.265325] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:40.030979] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:42.857803] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:47.693628] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:50.481433] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:53.259948] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:55.650360] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:51:58.420613] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:01.156285] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:06.088667] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:08.927803] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:11.678588] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:13.934971] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:16.685607] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:19.470217] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:24.458394] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:27.235878] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:30.010400] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:32.211116] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:34.993019] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:37.773012] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:42.807891] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:45.622184] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:48.412089] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:50.576672] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:53.313298] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:52:56.109101] SNMP Error for ip_address: invalid literal for int() with base 10: 'port'
+[2026-04-23 10:53:52.837762] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:53:54.452704] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:53:56.061599] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:53:56.195808] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:53:57.598231] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:53:57.756933] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:13.348826] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:14.941009] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:16.512300] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:16.626967] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:18.115231] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:18.243756] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:33.798982] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:35.374115] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:36.922136] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:37.015876] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:38.658952] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:38.891543] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:54.145015] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:55.946306] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:54:57.314069] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:57.450891] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:54:59.077750] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:54:59.206620] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:55:14.569263] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:16.359748] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:17.714707] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:55:17.834584] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:55:19.571944] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:55:19.666851] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:55:34.996697] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:36.799731] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:38.222233] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:55:38.374040] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:55:39.956103] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:55:40.052044] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:55:55.523326] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:57.180733] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:55:58.716467] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:55:58.804474] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:00.369389] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:56:00.499949] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:15.935879] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:56:17.671543] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:56:19.121562] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:56:19.239945] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:20.835770] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:56:20.968950] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:36.390059] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:56:38.165471] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:56:39.578444] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:56:39.674573] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:41.341644] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:56:41.464911] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:56:56.851477] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:56:58.592812] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:57:00.008055] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:00.075166] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:57:01.711349] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:01.824850] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:57:17.216361] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:57:18.976907] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:57:20.347661] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:20.398961] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:57:22.138437] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:22.252857] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:57:37.562715] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:57:39.321038] SNMP Error for 192.168.1.1: timed out
+[2026-04-23 10:57:40.740758] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:40.823080] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host
+[2026-04-23 10:57:42.426163] SNMP Error for 8.8.8.8: timed out
+[2026-04-23 10:57:42.556154] SNMP Error for 127.0.0.1: [WinError 10054] An existing connection was forcibly closed by the remote host

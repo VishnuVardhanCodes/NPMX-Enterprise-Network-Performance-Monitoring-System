@@ -1,9 +1,17 @@
-import psycopg2
-import os
+import pymysql
+from config import *
 
 def get_connection():
-    connection = psycopg2.connect(
-        os.environ.get("DATABASE_URL"),
-        sslmode="require"
+
+    connection = pymysql.connect(
+
+        host=MYSQL_HOST,
+        user=MYSQL_USER,
+        password=MYSQL_PASSWORD,
+        database=MYSQL_DATABASE,
+
+        cursorclass=pymysql.cursors.DictCursor
+
     )
+
     return connection

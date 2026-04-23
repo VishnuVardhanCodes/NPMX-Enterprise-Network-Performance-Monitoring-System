@@ -24,7 +24,7 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 
 # ✅ Your frontend URL
-FRONTEND_URL = "https://npmx-enterprise-network-performance.vercel.app"
+FRONTEND_URL = "http://localhost:5173"
 
 # ✅ Correct CORS
 CORS(
