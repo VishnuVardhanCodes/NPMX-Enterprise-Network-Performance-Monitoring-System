@@ -3,7 +3,7 @@
 NPMX is an enterprise-grade, high-performance network monitoring platform designed for real-time telemetry analysis, topological mapping, and automated performance auditing.
 
 ## 🚀 Key Features
-
+ 
 - **Universal Device Support**: Fully operational for any IP-based node via hybrid ICMP/SNMP telemetry.
 - **Smart Discovery**: Automated subnet scanning (Multi-threaded) to identify and register active inventory.
 - **Topological Mapping**: Interactive ReactFlow-based network diagram with persistent layout memory.
