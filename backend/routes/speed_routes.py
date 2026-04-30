@@ -1,50 +1,38 @@
 from flask import Blueprint, jsonify
 from services.speed_test_service import run_speed_test
-from models.speed_model import save_speed_test_result, get_speed_test_history
-from flask_jwt_extended import jwt_required
+from models.speed_model import (
+    insert_speed_test,
+    get_speed_history
+)
 
-speed_routes = Blueprint('speed_routes', __name__)
+speed_bp = Blueprint("speed", __name__)
 
-@speed_routes.route('/speed-test', methods=['GET'])
-@jwt_required()
-def start_speed_test():
-    """
-    Endpoint to run an internet speed test and save the result.
-    """
+@speed_bp.route("/api/speed-test", methods=["GET"])
+def speed_test():
     try:
         result = run_speed_test()
-        
-        # Save to database
-        save_speed_test_result(
-            ping=result['ping'],
-            download=result['download'],
-            upload=result['upload']
-        )
-        
-        return jsonify({
-            "status": "success",
-            "data": result
-        }), 200
+
+        # Save to database if no error
+        if "error" not in result:
+            insert_speed_test(
+                result["ping"],
+                result["download"],
+                result["upload"]
+            )
+
+        return jsonify(result)
     except Exception as e:
         return jsonify({
-            "status": "error",
-            "message": str(e)
+            "ping": 0,
+            "download": 0,
+            "upload": 0,
+            "error": str(e)
         }), 500
 
-@speed_routes.route('/speed-test/history', methods=['GET'])
-@jwt_required()
-def get_history():
-    """
-    Endpoint to get historical speed test results.
-    """
+@speed_bp.route("/api/speed-test/history", methods=["GET"])
+def history():
     try:
-        history = get_speed_test_history()
-        return jsonify({
-            "status": "success",
-            "data": history
-        }), 200
+        data = get_speed_history()
+        return jsonify(data)
     except Exception as e:
-        return jsonify({
-            "status": "error",
-            "message": str(e)
-        }), 500
+        return jsonify({"error": str(e)}), 500

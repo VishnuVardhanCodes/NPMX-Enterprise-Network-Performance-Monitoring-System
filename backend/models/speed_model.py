@@ -1,61 +1,56 @@
 from database import get_connection
 import logging
 
-def create_speed_test_table():
-    """
-    Creates the speed_tests table if it doesn't exist.
-    """
-    connection = get_connection()
+def create_speed_table():
+    conn = get_connection()
     try:
-        with connection.cursor() as cursor:
-            query = """
-                CREATE TABLE IF NOT EXISTS speed_tests (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    ping FLOAT,
-                    download FLOAT,
-                    upload FLOAT
-                )
-            """
-            cursor.execute(query)
-        connection.commit()
+        cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS speed_tests (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                ping FLOAT,
+                download FLOAT,
+                upload FLOAT,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        conn.commit()
+        cursor.close()
     except Exception as e:
-        logging.error(f"Error creating speed_tests table: {str(e)}")
+        logging.error(f"Error creating speed_tests table: {e}")
     finally:
-        connection.close()
+        conn.close()
 
-def save_speed_test_result(ping, download, upload):
-    """
-    Saves a speed test result to the database.
-    """
-    connection = get_connection()
+def insert_speed_test(ping, download, upload):
+    conn = get_connection()
     try:
-        with connection.cursor() as cursor:
-            query = """
-                INSERT INTO speed_tests (ping, download, upload)
-                VALUES (%s, %s, %s)
-            """
-            cursor.execute(query, (ping, download, upload))
-        connection.commit()
-        return True
-    except Exception as e:
-        logging.error(f"Error saving speed test result: {str(e)}")
-        return False
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO speed_tests
+            (ping, download, upload)
+            VALUES (%s, %s, %s)
+        """, (ping, download, upload))
+        conn.commit()
+        cursor.close()
     finally:
-        connection.close()
+        conn.close()
 
-def get_speed_test_history(limit=20):
-    """
-    Retrieves the history of speed test results.
-    """
-    connection = get_connection()
+def get_speed_history():
+    conn = get_connection()
     try:
-        with connection.cursor() as cursor:
-            query = "SELECT * FROM speed_tests ORDER BY timestamp DESC LIMIT %s"
-            cursor.execute(query, (limit,))
-            return cursor.fetchall()
+        # Use DictCursor for dictionary return as requested (dictionary=True in mysql-connector, but we use pymysql with DictCursor)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT *
+            FROM speed_tests
+            ORDER BY timestamp DESC
+            LIMIT 10
+        """)
+        data = cursor.fetchall()
+        cursor.close()
+        return data
     finally:
-        connection.close()
+        conn.close()
 
-# Ensure table exists on import/initialization
-create_speed_test_table()
+# Ensure table exists
+create_speed_table()

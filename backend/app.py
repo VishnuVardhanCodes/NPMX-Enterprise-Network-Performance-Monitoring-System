@@ -15,7 +15,7 @@ from routes.threshold_routes import threshold_routes
 from routes.auth_routes import auth_routes
 from routes.log_routes import log_routes
 from routes.dashboard_routes import dashboard_routes
-from routes.speed_routes import speed_routes
+from routes.speed_routes import speed_bp  # Phase 6
 
 from flask_jwt_extended import JWTManager
 from monitor import start_monitor
@@ -40,8 +40,17 @@ logging.info("Application started successfully.")
 # ✅ Initialize bcrypt
 bcrypt = Bcrypt(app)
 
-# ✅ Correct CORS
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+# ==========================
+# PHASE 1 — Fix Flask CORS
+# ==========================
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": "*"
+        }
+    }
+)
 
 # ✅ Proper OPTIONS handling
 @app.before_request
@@ -112,7 +121,7 @@ app.register_blueprint(threshold_routes, url_prefix='/api')
 app.register_blueprint(auth_routes, url_prefix='/api')
 app.register_blueprint(log_routes, url_prefix='/api')
 app.register_blueprint(dashboard_routes, url_prefix='/api')
-app.register_blueprint(speed_routes, url_prefix='/api')
+app.register_blueprint(speed_bp) # Phase 6
 
 
 @app.route('/', methods=['GET'])
