@@ -73,7 +73,8 @@ const SpeedTest = () => {
       const data = response.data || response;
       
       if (data.error) {
-        toast.error(`Speed Test Failed: ${data.error}`, { id: 'speed-test' });
+        setSpeedData({ ping: 0, download: 0, upload: 0 });
+        toast.error(`Network Issue: ${data.error}`, { id: 'speed-test' });
       } else if (data.download !== undefined) {
         setSpeedData(data);
         if (data.download > maxDownload) {
