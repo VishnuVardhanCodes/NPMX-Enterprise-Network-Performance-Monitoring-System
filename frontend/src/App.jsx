@@ -15,6 +15,7 @@ import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import SystemLogs from './pages/SystemLogs';
+import SpeedTest from './pages/SpeedTest';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const PageWrapper = ({ children }) => (
@@ -65,6 +66,7 @@ function App() {
           <Route path="/reports" element={<ProtectedRoute><PageWrapper><Reports /></PageWrapper></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><PageWrapper><Settings /></PageWrapper></ProtectedRoute>} />
           <Route path="/logs" element={<ProtectedRoute><PageWrapper><SystemLogs /></PageWrapper></ProtectedRoute>} />
+          <Route path="/speed-test" element={<ProtectedRoute><PageWrapper><SpeedTest /></PageWrapper></ProtectedRoute>} />
        </Routes>
 
        <Toaster 

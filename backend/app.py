@@ -15,6 +15,7 @@ from routes.threshold_routes import threshold_routes
 from routes.auth_routes import auth_routes
 from routes.log_routes import log_routes
 from routes.dashboard_routes import dashboard_routes
+from routes.speed_routes import speed_routes
 
 from flask_jwt_extended import JWTManager
 from monitor import start_monitor
@@ -40,20 +41,21 @@ logging.info("Application started successfully.")
 bcrypt = Bcrypt(app)
 
 # ✅ Correct CORS
-CORS(
-    app,
-    resources={
-        r"/api/*": {
-            "origins": [
-                FRONTEND_URL,
-                "http://localhost:5173"
-            ]
-        }
-    },
-    supports_credentials=True
-)
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
 # ✅ Proper OPTIONS handling
+@app.before_request
+def handle_preflight():
+    if request.method == "OPTIONS":
+        res = jsonify({"status": "ok"})
+        origin = request.headers.get("Origin")
+        if origin:
+            res.headers["Access-Control-Allow-Origin"] = origin
+        res.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+        res.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        res.headers["Access-Control-Allow-Credentials"] = "true"
+        return res, 200
+
 @app.after_request
 def after_request(response):
     origin = request.headers.get("Origin")
@@ -63,6 +65,7 @@ def after_request(response):
 
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
 
     return response
 
@@ -109,6 +112,7 @@ app.register_blueprint(threshold_routes, url_prefix='/api')
 app.register_blueprint(auth_routes, url_prefix='/api')
 app.register_blueprint(log_routes, url_prefix='/api')
 app.register_blueprint(dashboard_routes, url_prefix='/api')
+app.register_blueprint(speed_routes, url_prefix='/api')
 
 
 @app.route('/', methods=['GET'])
