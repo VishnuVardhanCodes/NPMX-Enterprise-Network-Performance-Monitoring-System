@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Server, Activity, Network, Bell, FileText, Settings, Menu, ChevronLeft, ShieldAlert, Terminal, Gauge } from 'lucide-react';
+import { LayoutDashboard, Server, Activity, Network, Bell, FileText, Settings, Menu, ChevronLeft, ShieldAlert, Terminal, Gauge, Wifi } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Sidebar({ isOpen, toggleSidebar }) {
@@ -11,7 +11,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
     { name: 'Network Map', icon: Network, path: '/map' },
     { name: 'Live Monitoring', icon: Activity, path: '/monitoring' },
     { name: 'Alerts', icon: ShieldAlert, path: '/alerts' },
-    { name: 'Internet Speed', icon: Gauge, path: '/speed-test' },
+    { name: 'Internet Speed', icon: Wifi, path: '/speed-test' },
   ];
   
   if (userRole === 'admin') {
