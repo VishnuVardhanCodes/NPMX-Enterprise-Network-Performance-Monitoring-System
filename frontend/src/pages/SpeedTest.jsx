@@ -53,9 +53,10 @@ const SpeedTest = () => {
   const fetchHistory = async () => {
     try {
       const response = await getSpeedHistoryApi();
-      if (Array.isArray(response.data)) {
+      const data = response.data || response;
+      if (Array.isArray(data)) {
         // Reverse to show chronological order on chart
-        setHistory([...response.data].reverse());
+        setHistory([...data].reverse());
       }
     } catch (error) {
       console.error("Error fetching history:", error);
@@ -69,20 +70,23 @@ const SpeedTest = () => {
 
     try {
       const response = await runSpeedTestApi();
-      const data = response.data;
+      const data = response.data || response;
       
       if (data.error) {
         toast.error(`Speed Test Failed: ${data.error}`, { id: 'speed-test' });
-      } else {
+      } else if (data.download !== undefined) {
         setSpeedData(data);
         if (data.download > maxDownload) {
           setMaxDownload(Math.ceil(data.download / 50) * 50);
         }
         toast.success("Speed Test Completed Successfully", { id: 'speed-test' });
         fetchHistory();
+      } else {
+        toast.error("Invalid data format received from server.", { id: 'speed-test' });
       }
     } catch (error) {
-      toast.error("Network Error: Could not connect to backend.", { id: 'speed-test' });
+      const serverError = error.response?.data?.error;
+      toast.error(serverError ? `Network Issue: ${serverError}` : "Network Error: Could not connect to backend.", { id: 'speed-test' });
     } finally {
       setLoading(false);
     }
