@@ -194,14 +194,14 @@ export const getDashboardStatsApi = async () => {
 };
 
 // SPEED TEST
-export const startSpeedTestApi = async () => {
+export const runSpeedTestApi = async () => {
   const res = await api.get('/speed-test');
-  return res.data;
+  return res;
 };
 
 export const getSpeedHistoryApi = async () => {
   const res = await api.get('/speed-test/history');
-  return res.data;
+  return res;
 };
 
 export default api;
