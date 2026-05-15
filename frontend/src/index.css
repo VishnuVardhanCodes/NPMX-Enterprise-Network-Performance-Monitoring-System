@@ -6,6 +6,8 @@
   --color-secondary: #2563eb;
   --color-accent: #06b6d4;
   --color-pink: #ec4899;
+  /* Map Tailwind font-sans utility to Poppins globally */
+  --font-sans: 'Poppins', sans-serif;
 }
 
 :root {
